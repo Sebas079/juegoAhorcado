@@ -1,0 +1,93 @@
+/*general*/
+@import url('https://fonts.googleapis.com/css2? family= Andika & family= Comic+Neue & display=swap');
+@import url('https://fonts.googleapis.com/css2? family= Andika & family= Comic+Neue &familia= IBM+Plex+Sans+Thai+Looped & display=swap');
+*{
+    box-sizing: border-box;
+}
+html, body{
+   width: 100%;
+   margin: 0;
+   padding: 0;
+   background: #F3F5FC;
+
+}
+/*main*/
+.main{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 100%;
+    font-family: 'IBM Plex Sans Thai Looped', sans-serif;;
+    font-size: 1vw;
+    color: rgb(10, 10, 119);
+    align-items: center;
+    align-content: center;
+    background: #F3F5FC;
+    ;
+}
+div.logo{
+    position: relative;
+    object-fit: none;
+    object-position: 2vw 15%;
+    width: 100%;
+
+}
+/*area dibujo canvas*/
+.ahorcado{
+    width: 50vw ;
+    height: 35vw;
+   /* background-color: rgb(7, 99, 102);*/
+    border-radius: 3vw;
+
+}
+/*input new word*/
+div.input{
+    display: flex;
+    height: 25%;
+    align-items: center;
+    align-content: center;
+}
+.newWord{
+    padding: 4vw 10vw;
+    border-radius: 10px;
+    border: 1px solid rgb(10, 10, 119);
+    
+}
+/*botones*/
+div.buttons{
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 24px;
+    margin: 2vw;
+
+
+}
+.btn-newGame,
+.btn-desist,
+.btn-addWord{
+  padding: 2vw 5vw;
+  margin: 2vw;
+  color:rgb(10, 10, 119);
+  border: none;
+  border-radius: 10px;
+
+}
+.btn-newGame,
+.btn-addWord{
+    background-color: rgb(10, 10, 119);
+    color: #fff;
+
+}
+.btn-desist{
+    border: 1px solid rgb(10, 10, 119);
+    color: rgb(10, 10, 119);
+    padding: 1.9vw 6.8vw;
+
+}
+.btn:hover{
+    cursor: pointer;
+    background-color: rgb(14, 152, 162);
+    
+}
