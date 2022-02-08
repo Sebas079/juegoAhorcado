@@ -15,18 +15,21 @@ html, body{
 .main{
     display: flex;
     flex-direction: column;
-    width: 90%;
+    width: 100%;
     height: 100%;
     font-family: 'IBM Plex Sans Thai Looped', sans-serif;;
     font-size: 1vw;
-    color: rgb(10, 10, 119);
+    color: rgb(6, 6, 126);
     align-items: center;
     align-content: center;
-    background: #F3F5FC;
+    background: #f3fcf5;
     ;
 }
-div.logo{
-    position: relative;
+.logo{
+    width: 5vw;
+    height: auto;
+    margin-left: 2vw;
+    position: absolute;
     object-fit: none;
     object-position: 2vw 15%;
     width: 100%;
@@ -34,21 +37,54 @@ div.logo{
 }
 /*area dibujo canvas*/
 .ahorcado{
-    width: 50vw ;
+    width: 50vw;
     height: 35vw;
+    max-width: 700px;
+    min-height: 300px;
+    margin:0;
+    padding: 0;
    /* background-color: rgb(7, 99, 102);*/
     border-radius: 3vw;
 
 }
+/* Tablero abecedario*/
+section.tablero{
+    margin: 1.3vw;
+
+}
+button.tablero{
+    font-size: 1.5vw;
+    border-radius: 5px;
+    padding: 0.8vw;
+    margin: 0,3vw;
+    border: none;
+    background-color: rgb(75,40,150);
+    color: #fff;
+   
+
+}
+button.tablero:hover{
+    cursor: pointer;
+    background-color: rgb(14, 152, 162);
+
+}
+button.tablero:active{
+    color: red;
+}
 /*input new word*/
 div.input{
     display: flex;
-    height: 25%;
+    flex-direction: row;
+    height: 15%;
     align-items: center;
     align-content: center;
 }
-.newWord{
-    padding: 4vw 10vw;
+.newWord,
+.arriesgar,
+.letra{
+
+    margin:0.5vw;
+    padding: 1vw 2vw;
     border-radius: 10px;
     border: 1px solid rgb(10, 10, 119);
     
@@ -59,16 +95,16 @@ div.buttons{
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    padding: 24px;
-    margin: 2vw;
+    padding: 1.5vw;
+    margin: 0.5vw 4vw;
 
 
 }
 .btn-newGame,
 .btn-desist,
 .btn-addWord{
-  padding: 2vw 5vw;
-  margin: 2vw;
+  padding: 0.5vw 2vw;
+  margin: 0.5vw;
   color:rgb(10, 10, 119);
   border: none;
   border-radius: 10px;
@@ -83,7 +119,7 @@ div.buttons{
 .btn-desist{
     border: 1px solid rgb(10, 10, 119);
     color: rgb(10, 10, 119);
-    padding: 1.9vw 6.8vw;
+    padding: 0.5vw 4vw;
 
 }
 .btn:hover{

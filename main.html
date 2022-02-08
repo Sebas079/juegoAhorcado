@@ -1,33 +1,58 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
+    <script defer src="ahorcado.js">
+    </script>
+    <script defer src="canvas.js"></script>
     <title>Juego del Ahorcado</title>
 </head>
+
 <body>
-    <main class= "main">
+    <main class="main">
         <h1>JUEGO DEL AHORCADO</h1>
         <div class="logo">
-            <img class="logo" src="images/Logo.svg" alt="logo aliura">
+            <img class="logo" src="images/Logo.svg" alt="logo aliura" height="auto" width="20px">
         </div>
-       
-        <canvas class="ahorcado">
+
+        <canvas class="ahorcado" width="968" height="400">
 
         </canvas>
+        <!--
+       <section class="tablero">
+            <button class="tablero" type="button" value="A">A</button> <button type="button"class="tablero" type="submit" value="B">B</button> <button
+            type="button"  class="tablero" type="submit">C</button> <button class="tablero" type="submit">D</button>
+            <button type="button" class="tablero" type="submit">F</button> <button type="button" class="tablero" type="submit">G</button> <button
+            type="button" class="tablero" type="submit">H</button> <button type="button" class="tablero" type="submit">I</button>
+            <button class="tablero" type="submit">J</button> <button class="tablero" type="submit">K</button> <button
+            type="button" class="tablero" type="submit">L</button> <button class="tablero" type="submit">M</button>
+            <button type="button" class="tablero" type="submit">N</button> <button class="tablero" type="submit">Ñ</button> <button
+            type="button"   class="tablero" type="submit">O</button> <button class="tablero" type="submit">P</button>
+            <button type="button" class="tablero" type="submit">Q</button> <button class="tablero" type="submit">R</button> <button
+            type="button" class="tablero" type="submit">S</button> <button class="tablero" type="submit">T</button>
+            <button type="button" class="tablero" type="submit">U</button> <button class="tablero" type="submit">V</button> <button
+            type="button"   class="tablero" type="submit">W</button> <button class="tablero" type="submit">X</button>
+            <button type="button" class="tablero" type="submit">Y</button> <button  type="button" class="tablero" type="submit">Z</button>
+        </section>-->
         <div class="input">
+
+            <input type="text" class="letra" onkeydown="capturarLetra(event)" placeholder="Escribe una letra" />
+            <input type="text" class="arriesgar" placeholder="Ya lo sabes??? escribe aqui 😁🤞">
             <input class="newWord" type="text" placeholder="Ingresa una nueva palabra aqui...">
 
         </div>
         <div class="buttons">
-            <button type="submit" class="btn btn-newGame" value="Nuevo Juego" >Nuevo Juego</button>
-            <button type="submit" class="btn btn-addWord" value="Agregar Palabra" >Agragar palabra</button>
-            <button type="submit" class="btn btn-desist" value="Desistir">Desistir</button>
+            <button type="submit" id="btn-newGame" class="btn btn-newGame">Nuevo Juego</button>
+            <button type="submit" id="btn-addWord" class="btn btn-addWord">Agregar palabra</button>
+            <button type="submit" id="desist" class="btn btn-desist">Desistir</button>
         </div>
-        
+
 
     </main>
 </body>
+
 </html>
