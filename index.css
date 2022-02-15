@@ -1,6 +1,7 @@
 /*general*/
-@import url('https://fonts.googleapis.com/css2? family= Andika & family= Comic+Neue & display=swap');
-@import url('https://fonts.googleapis.com/css2? family= Andika & family= Comic+Neue &familia= IBM+Plex+Sans+Thai+Looped & display=swap');
+ font-face{
+    @import url('https://fonts.googleapis.com/css2? family= Andika & family= Comic+Neue & family= IBM+Plex+Sans+Thai+Looped & family= Montserrat:wght@300; 400 & mostrar=cambiar');
+ }
 *{
     box-sizing: border-box;
 }
@@ -19,11 +20,11 @@ html, body{
     height: 100%;
     font-family: 'IBM Plex Sans Thai Looped', sans-serif;;
     font-size: 1vw;
-    color: rgb(6, 6, 126);
+    /*color: rgb(6, 6, 126);*/
     align-items: center;
     align-content: center;
-    background: #f3fcf5;
-    ;
+    background-color: #f3fcf5;
+
 }
 .logo{
     width: 5vw;
@@ -39,38 +40,15 @@ html, body{
 .ahorcado{
     width: 50vw;
     height: 35vw;
-    max-width: 700px;
-    min-height: 300px;
+    max-width: 968px;
+    max-height: 600px;
     margin:0;
     padding: 0;
-   /* background-color: rgb(7, 99, 102);*/
+    background-color: rgb(214, 241, 242);
     border-radius: 3vw;
 
 }
-/* Tablero abecedario*/
-section.tablero{
-    margin: 1.3vw;
 
-}
-button.tablero{
-    font-size: 1.5vw;
-    border-radius: 5px;
-    padding: 0.8vw;
-    margin: 0,3vw;
-    border: none;
-    background-color: rgb(75,40,150);
-    color: #fff;
-   
-
-}
-button.tablero:hover{
-    cursor: pointer;
-    background-color: rgb(14, 152, 162);
-
-}
-button.tablero:active{
-    color: red;
-}
 /*input new word*/
 div.input{
     display: flex;
@@ -84,7 +62,7 @@ div.input{
 .letra{
 
     margin:0.5vw;
-    padding: 1vw 2vw;
+    padding: 3vw ;
     border-radius: 10px;
     border: 1px solid rgb(10, 10, 119);
     
@@ -97,14 +75,22 @@ div.buttons{
     align-items: flex-start;
     padding: 1.5vw;
     margin: 0.5vw 4vw;
+}
+ .btn{
+
+    display: flex;
+    flex-direction:row;
+    align-items: flex-start;
+    padding: 1.5vw;
+    margin: 0.5vw 4vw;
 
 
 }
 .btn-newGame,
 .btn-desist,
 .btn-addWord{
-  padding: 0.5vw 2vw;
-  margin: 0.5vw;
+  padding: 2vw 5vw;
+  margin: 2vw;
   color:rgb(10, 10, 119);
   border: none;
   border-radius: 10px;
@@ -119,11 +105,16 @@ div.buttons{
 .btn-desist{
     border: 1px solid rgb(10, 10, 119);
     color: rgb(10, 10, 119);
-    padding: 0.5vw 4vw;
+    padding: 2vw 5vw;
 
 }
 .btn:hover{
     cursor: pointer;
     background-color: rgb(14, 152, 162);
-    
 }
+
+/* Guiones palabra oculta*/
+#palabra{
+    font-size: 5vw;
+}
+

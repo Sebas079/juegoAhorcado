@@ -1,8 +1,4 @@
-// Variables Globales
-var secretWord = "";
-
-
-// diccionario de palabras
+// Array diccionario
 var diccionario = [
     "maduro", "electron", "deligar", "azul",
     "pobre", "trapo", "hojalata", "caramelo",
@@ -14,76 +10,82 @@ var diccionario = [
     "alma", "posicion", "aventura", "multa", "muleta",
     "estopa", "jauria", "incremento", "tesoro",
     "juventud", "especial", "oracion", "perseverar",
-    "llegar", "irse", "jugar", "estadia"];
+    "llegar", "irse", "jugar", "estadia", "pelea", "atajo",
+    "abrazar", "sentimiento", "acuario", "saltar", "leon", "aturdio",
+    "entrada", "salida", "armar", "tratamiento", "saltamontes"];
+/* bariables globales */
+var btnInicio = document.getElementById("btn-start");
+var posicionRandom = Math.floor(Math.random() * diccionario.length);
+var palabraSecreta = sortearPalabra();
+var newWord = document.querySelector(".addWord");
+var letrasErradas = [];
+var letras = [];
+var palabraAdivinar = [];
+var capturarLetra = [];
+var btnInicio = document.getElementById("inicio");
+var btnComprobar = document.getElementById("comprobar");
 
-// Funcion para sortear palabra
+
 function sortearPalabra() {
-    let bandera1 = Math.floor(Math.random() * 10);
-    let bandera2 = Math.floor(Math.random() * 10);
-    let bandera3 = Math.floor(Math.random() * 100);
-    let palabraSecreta;
-    /* console.log(bandera3);
-     console.log(bandera2);
-     console.log(bandera1);*/
-    let posicion = bandera1 + bandera2 + bandera3;
-    if (posicion > diccionario.length) {
-        posicion -= diccionario.length
-        // console.log(diccionario[posicion])
-        return diccionario[posicion];
-
-    } else {
-        return diccionario[posicion];
-
-    }
-
-
+    return diccionario[posicionRandom].toUpperCase();
 };
-// funcion para agregar palabra 
+function dibujarGuiones(palabra) {
+    for (let x = 0; x < palabra.length; x++) {
+        palabraAdivinar += "_ ";
+    }
+    document.getElementById("palabra").innerHTML = palabraAdivinar;
 
-function agregarPalabra() {
-    var newWord = document.getElementById("newWord").value;
+}
+// funcion para comprobar letra
+function comprobar() {
+    let palabra = palabraSecreta//.split(" ");
 
-    if (diccionario.includes(newWord) == true) {
-        alert("La palabra ya existe");
-    } else {
-        diccionario.push(newWord);
+    let letra = letras
+    console.log(letra)
+   
+    let nuevo = "";
+    console.log(palabra);
+    for (let x = 0; x < palabra.length; x++) {
+        if (letra == palabra[x]) {
+            nuevo+=letra + " ";
+            console.log(palabraSecreta[x])
+            console.log(letra)
+            console.log(nuevo)
+        } else {
+            nuevo += palabraAdivinar[x * 2] + " ";
+            console.log(nuevo)
+        }
 
     }
+    palabraAdivinar = nuevo;
+    document.getElementById("palabra").innerHTML = palabraAdivinar;
 }
 
-var btnAgregarPalabra = document.querySelector("#btn-addWord");
-btnAgregarPalabra = document.addEventListener("click", function (event) {
+
+//botones
+btnComprobar.addEventListener("click", comprobar);
+btnInicio.addEventListener("click", function (event) {
+
     event.preventDefault();
-    agregarPalabra;
+    dibujarGuiones(palabraSecreta);
 });
-// botom jugar
-var btnNewgame = document.querySelector("#newGame");
-btnNewgame = document.addEventListener("click", function(event){
-    event.preventDefault();
-    secretWord= sortearPalabra();
-    console.log(secretWord);
-    //jugar(secretWord);
-   // dibujarLineas(secretWord);
+
+// funcion capturar letra con el teclado
+
+
+capturarLetra = document.addEventListener("keydown", function (e) {
+    e.preventDefault();
+    var letra = e.keyCode || e.which;
+    if (letra > 64 && letra < 91) {
+        letra = e.key.toUpperCase();
+        if (letras.includes(letra)) {
+            alert("ya elegiste esa letra");
+        } else {
+            letras.push(letra);
+            //console.log(letras);
+        }
+    }
 })
-//Funcion para capturar letra del Usuario 
 
-
-function capturarLetra (event){
-
-    let letraUsuario = event.key.toUpperCase();
-    // console.log(letraUsuario);
-     return letraUsuario;
-     }
-
-
-function jugar(word){
-    
-    let wordGame = word.toUpperCase();
-    wordGame.split("");
-    c
-    for(let x = 0 ; x < wordGame.length ; x++){
-     // console.log(wordGame[x])
-    }     
-       };
 
 
