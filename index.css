@@ -17,10 +17,10 @@ html, body{
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 100%;
+    height: auto;
     font-family: 'IBM Plex Sans Thai Looped', sans-serif;;
-    font-size: 1vw;
-    /*color: rgb(6, 6, 126);*/
+    font-size: 0.8vw;
+    color: rgb(10, 10, 119);
     align-items: center;
     align-content: center;
     background-color: #f3fcf5;
@@ -53,43 +53,54 @@ html, body{
 div.input{
     display: flex;
     flex-direction: row;
-    height: 15%;
+    height: 10%;
     align-items: center;
     align-content: center;
 }
 .newWord,
 .arriesgar,
 .letra{
-
-    margin:0.5vw;
-    padding: 3vw ;
+    font-size: 1.5rem;
+    margin:1rem;
+    padding: 0.5rem ;
     border-radius: 10px;
     border: 1px solid rgb(10, 10, 119);
+    align-content: center;
+    color:rgb(10, 10, 119) ;
+}
+/*seccion letra comprobar*/
+.comprobar{
+    display: flex;
+    margin: 0 auto;
+    padding: .5rem;
     
 }
+.btn-addWord{
+    border-radius: 100%;
+}
 /*botones*/
-div.buttons{
+ div.buttons{
 
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    padding: 1.5vw;
-    margin: 0.5vw 4vw;
+    padding: 0.2rem;
+    margin: 0 auto;
 }
  .btn{
 
     display: flex;
     flex-direction:row;
     align-items: flex-start;
-    padding: 1.5vw;
-    margin: 0.5vw 4vw;
+    padding: 0;
+    margin: 0;
 
 
 }
 .btn-newGame,
 .btn-desist,
 .btn-addWord{
-  padding: 2vw 5vw;
+  padding: 0.9rem 1rem;
   margin: 2vw;
   color:rgb(10, 10, 119);
   border: none;
@@ -105,7 +116,7 @@ div.buttons{
 .btn-desist{
     border: 1px solid rgb(10, 10, 119);
     color: rgb(10, 10, 119);
-    padding: 2vw 5vw;
+    padding: 0.9rem 2rem;
 
 }
 .btn:hover{
@@ -116,5 +127,7 @@ div.buttons{
 /* Guiones palabra oculta*/
 #palabra{
     font-size: 5vw;
+    height: 100%;
+    width: auto;
 }
 

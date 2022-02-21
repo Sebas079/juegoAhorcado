@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css"> 
-    <script defer src="ahorcado.js">
+    <script defer src="ahorcados.js">
     </script>
     <script defer src="canvas.js"></script>
     <title>Juego del Ahorcado</title>
@@ -17,32 +17,33 @@
         <h1>JUEGO DEL AHORCADO</h1>
         <div class="logo">
             <img class="logo" src="images/Logo.svg" alt="logo aliura" height="auto" width="20px">
+            
         </div>
 
-        <canvas class="ahorcado" width="1200" height="780">
-         
+        <canvas class="ahorcado" width="968" height="600">
+          
         </canvas>
         <div id="palabra" >
         
         </div>
-      <!--  <div>
+       <div class="comprobar">
               
             <input type="text" id="letra" class="letra" placeholder="Elige una letra" >
-            
+            <button type="submit"  id="comprobar" class="btn btn-addWord">Comprobar</button>
         </div>
        
      
-            
+          <!-- 
                 
                <input type="text" class="arriesgar" placeholder="Ya lo sabes??? escribe aqui 😁🤞">
-                <input type="text" class="newWord" placeholder="Ingresa una nueva palabra aqui...">-->
+                <input type="text" class="newWord" placeholder="Ingresa una nueva palabra aqui...">
     
-            </div>
+            </div>-->
             <div class="buttons">
                <!-- <button type="reset"  id="btn-newGame" class="btn btn-newGame">Juego nuevo</button>-->
-                <button type="submit" id="inicio" class="btn btn-newGame" >Inicio</button>
-               <button type="submit"  id="comprobar" class="btn btn-addWord">Comprobar</button>-->
-                <button  id="desist" class="btn btn-desist">Desistir</button>
+               <button type="submit" id="inicio" class="btn btn-newGame" >Inicio</button>
+            
+                <button type="reset"  id="desist" class="btn btn-desist">Desistir</button>
             </div>
 
         

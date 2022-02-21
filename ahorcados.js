@@ -13,33 +13,89 @@ var diccionary = [
     "llegar", "irse", "jugar", "estadia", "pelea", "atajo",
     "abrazar", "sentimiento", "acuario", "saltar", "leon", "aturdio",
     "entrada", "salida", "armar", "tratamiento", "saltamontes"];
+    //  variables globales
 var palabraSecreta = ""; //palabra ocultas 
 var palabraAdivinar = ""; // palabra adivinar 
 var lifes = 6;
-document.getElementById("inicio").addEventListener("click", comprobar());
-iniciar();
+var letra;
+var letrasUsuario ="";
+var letrasErradas = [];
+var anular= document.getElementById("inicio");
 
+// botones
+var btnInicio = document.getElementById("inicio").addEventListener("click",iniciar)
+var btnComprobar = document.getElementById("comprobar").addEventListener("click",comprobar)
+var btnDesist = document.getElementById("desist").addEventListener("click", reinicio);
+// funcion para inicias juego;
 function iniciar(){
+    anular.style.display= "none";
     palabraSecreta = diccionary[Math.floor(Math.random()*diccionary.length)];
-    palabraSecreta = palabraSecreta.toUpperCase();
-    for (let i = 0; i < palabraSecreta.length; i++) {
-        palabraAdivinar += "_ ";
+    for(let i = 0; i < palabraSecreta.length; i++){
+        palabraAdivinar +="_ ";
     }
     document.getElementById("palabra").innerHTML = palabraAdivinar;
 }
 
 function comprobar(){
-   let letra = document.getElementById("letra").value.toUpperCase();
-   console.log(letra)
-   palabraSecreta = palabraSecreta.toLocaleUpperCase();
-   let nuevo="";
-   for(let i = 0; i < palabraSecreta.length; i++){
-       if(letra == palabraSecreta[i]){
-           nuevo += letra + " ";
-       }else{
-           nuevo = nuevo + palabraAdivinar[i*2] + " ";
+    letra = document.getElementById("letra").value.toUpperCase();
+    letrasUsuario = letra;
+    console.log(letrasUsuario);
+    palabraSecreta = palabraSecreta.toUpperCase();  
+    var nuevo ="";
+    for(let i = 0; i < palabraSecreta.length; i++){
+        if(letrasUsuario == palabraSecreta[i] ){
+            console.log(palabraSecreta[i])
+            nuevo= nuevo + letrasUsuario + " ";
+    
+        }else{
+            nuevo = nuevo + palabraAdivinar[i*2] + " ";   
+                  
+              } 
+       if(nuevo == palabraAdivinar){
+           letrasErradas.push(letrasUsuario);
+           lifes --;
+           letrasFall();
        }
-   }
-   palabraAdivinar = nuevo ;
-   document.getElementById("palabra").innerHTML = palabraAdivinar;
+       
+    }
+    
+    if(lifes == 0){
+        loser();
+    }
+    dibujarAhorcado(lifes);
+    
+    palabraAdivinar = nuevo;
+    document.getElementById("palabra").innerHTML = palabraAdivinar;
+    if(palabraAdivinar.search("_") == -1){
+        win();
+    }
+} 
+
+function dibujarAhorcado(num){
+    switch(num){
+        case 5 :
+            dibujarCabeza();
+            break;
+        case 4 :
+            dibujarTorzo();
+            break;
+        case 3 :
+            dibujarBrazoDer();
+            break;
+        case 2 :
+            dibujarBrazoiz();
+            break;
+        case 1 :
+            dibujarPiernaDer();
+            break;
+        case 0 :
+            dibujarPiernaIzq();
+            break;
+        
+    }
+}
+function reinicio(){
+    location.reload(true);
+   
+    anular.style.visibility ="visible";
 }
