@@ -130,4 +130,27 @@ div.input{
     height: 100%;
     width: auto;
 }
-
+/*Footer*/
+footer{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    align-content: space-between ;
+}
+/*iconos*/
+.icon{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    padding: 0 auto;
+    
+    width: 30%;
+    
+    
+}
